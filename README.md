@@ -1,228 +1,192 @@
-🚀 GovTrustChain
-Trust, Verified — Not Assumed.
+# 🚀 GovTrustChain  
+### 🔗 *Trust, Verified — Not Assumed.*
 
-GovTrustChain is a blockchain-inspired governance platform that introduces a Government Trust Score to bring transparency, accountability, and citizen participation into public services.
+<p align="center">
+  <img src="https://img.shields.io/badge/Blockchain-Inspired-blueviolet?style=for-the-badge&logo=ethereum" />
+  <img src="https://img.shields.io/badge/Firebase-Deployed-orange?style=for-the-badge&logo=firebase" />
+  <img src="https://img.shields.io/badge/Hackathon-MVP-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Live-green?style=for-the-badge" />
+</p>
 
-This repository contains the Round-1 MVP, fully deployed and demo-ready, validating the core workflow of the proposed solution.
+<p align="center">
+  <b>GovTrustChain</b> is a blockchain-inspired governance platform that introduces a  
+  <b>Government Trust Score</b> to bring transparency, accountability, and citizen participation into public services.
+</p>
 
-🌍 Problem Statement
+---
 
-Public trust in government services is often low due to:
+## 🌍 Problem Statement
 
-Lack of transparency in execution
+Public trust in government services is often weakened due to:
 
-Delays and unclear accountability
+❌ Lack of transparency  
+❌ Delays without accountability  
+❌ Manipulated or unverifiable reports  
+❌ No measurable way to evaluate institutional performance  
 
-Manipulated or unverifiable reports
+Today, citizens are expected to **trust blindly**, without the ability to **verify independently**.
 
-No measurable way to assess institutional performance
+---
 
-Today, citizens are expected to trust systems without the ability to verify them.
+## 💡 GovTrustChain – Full Vision (Actual Solution)
 
-💡 The GovTrustChain Vision (Full Solution)
+GovTrustChain converts **public trust into a measurable, verifiable score**.
 
-GovTrustChain converts public trust into a measurable, verifiable score.
+### 🔮 In the complete solution:
+- 🧾 Every government project/service is registered on a **blockchain ledger**
+- 🔐 Actions and milestones are enforced via **smart contracts**
+- 📊 Trust Scores update automatically based on:
+  - Timely completion  
+  - Budget compliance  
+  - Verified citizen feedback  
+  - Audit outcomes  
+- 👥 Citizens can **verify records**, not just read reports  
+- 🛡️ Personal data stays private (only hashes & proofs stored)
 
-In the complete solution:
+> 🧠 *Transparency becomes system-driven, not promise-driven.*
 
-Every government project or service is registered on a blockchain ledger
+---
 
-Milestones and actions are enforced using smart contracts
+## 🧪 What This MVP Implements (Current Stage)
 
-Trust scores update automatically based on:
+This repository contains a **fully deployed, Round-1 MVP** that validates the **core workflow** of GovTrustChain.
 
-Timely completion
+### ✅ Implemented Features
 
-Budget compliance
+### 🌐 Public Transparency Dashboard
+- Publicly accessible list of government projects/services
+- Displays:
+  - Project name  
+  - Responsible department  
+  - 📊 **Live Trust Score (0–100)**  
+  - Progress bar  
+  - Current status (On-time / Delayed)
 
-Verified citizen feedback
+---
 
-Audit outcomes
+### 🔐 Secure Citizen Login
+- Google Sign-In using Firebase Authentication
+- No passwords stored
+- Protected routes for authenticated users
 
-Citizens can verify records instead of relying on reports
+---
 
-Personal data remains private; only hashes and proofs are stored
+### 👤 Citizen Dashboard
+- Personalized dashboard after login
+- View submitted feedback
+- Interact with public services
 
-Transparency becomes system-driven, not promise-driven.
+---
 
-🧪 What This MVP Demonstrates (Current Implementation)
+### 💬 Citizen Feedback System
+- Submit feedback for any listed project
+- Optional image metadata upload
+- Feedback directly influences the trust score
 
-This MVP focuses on validating the core workflow and user experience of GovTrustChain.
+---
 
-✅ Implemented in the MVP:
-🌐 Public Transparency Dashboard
+### 📈 Real-Time Trust Score Logic
+- Trust scores update instantly based on actions
+- Smooth animated visual feedback for score changes
 
-Publicly visible list of government projects/services
+---
 
-Displays:
+### 🛠️ Admin Demo Panel (Hidden Route)
+- Demo-only admin controls:
+  - ✔️ Mark milestone complete (+5)
+  - ❌ Mark project delayed (−10)
+- Demonstrates automated accountability logic
 
-Project name
+---
 
-Responsible department
+### 🎨 UI & Experience
+- Clean, professional government-style UI
+- Smooth micro-animations using Framer Motion
+- Fully responsive design (mobile + desktop)
 
-Live Trust Score (0–100)
+---
 
-Visual progress indicators
+## ⚙️ Technology Stack
 
-Current status (On-time / Delayed)
+### 🖥️ Frontend
+- ⚛️ **React 18 (Vite)** – Modern UI framework  
+- 🎨 **Tailwind CSS** – Utility-first styling  
+- 🎞️ **Framer Motion** – Smooth animations  
 
-🔐 Secure Citizen Login
+### ☁️ Backend & Platform
+- 🔐 **Firebase Authentication** – Google Sign-In  
+- 📦 **Firebase Firestore** – Real-time database  
+- 🚀 **Firebase Hosting** – Live deployment  
 
-Google Sign-In using Firebase Authentication
+### 🔗 Planned (Full Solution)
+- ⛓️ **Polygon / Ethereum Blockchain**
+- 📜 **Solidity Smart Contracts**
+- 🗂️ **IPFS** for decentralized proof storage
 
-No passwords stored
+---
 
-Protected routes for authenticated users
+## 🧠 Trust Score Logic (MVP)
 
-👤 Citizen Dashboard
+| Action | Impact |
+|------|--------|
+| Initial Score | 80 |
+| Milestone Completed | +5 |
+| Project Delayed | −10 |
+| Verified Feedback | +5 |
+| Score Range | 0–100 |
 
-Personalized dashboard after login
+> ⚠️ Blockchain logic is **simulated** in the MVP for rapid validation.
 
-View submitted feedback
+---
 
-Interact with government services
+## 🗂️ Firestore Collections
 
-💬 Citizen Feedback System
+### `projects`
+- `name`
+- `department`
+- `trustScore`
+- `status`
+- `lastUpdated`
 
-Submit feedback for any listed project
+### `feedback`
+- `userId`
+- `userName`
+- `userEmail`
+- `projectId`
+- `projectName`
+- `feedback`
+- `verified`
+- `createdAt`
 
-Optional image metadata upload
+### `users`
+- `displayName`
+- `email`
+- `photoURL`
+- `createdAt`
+- `updatedAt`
 
-Feedback directly influences trust score
+---
 
-📊 Real-Time Trust Score Logic
+## 🚧 MVP Limitations (Intentional)
 
-Trust score updates instantly based on actions
+⚠️ Blockchain integration is simulated  
+⚠️ No real document storage (metadata only)  
+⚠️ Firestore uses test rules  
+⚠️ Not connected to real government systems  
 
-Animated visual feedback for increases or drops
+These are **planned upgrades**, not missing ideas.
 
-🛠️ Admin Demo Panel (Hidden Route)
+---
 
-Simulated administrative controls:
+## 🚀 Deployment
 
-Mark milestones complete (+5)
+The MVP is deployed using **Firebase Hosting**.
 
-Mark project delayed (−10)
-
-Demonstrates automated accountability logic
-
-🎨 Engaging UI & Animations
-
-Smooth micro-animations using Framer Motion
-
-Professional, government-style dashboard design
-
-Fully responsive across devices
-
-⚙️ Tech Stack
-Frontend
-
-React 18 (Vite) – Fast, modern UI framework
-
-Tailwind CSS – Clean, consistent styling
-
-Framer Motion – Smooth UI animations
-
-Backend & Platform
-
-Firebase Authentication – Secure Google Sign-In
-
-Firebase Firestore – Real-time NoSQL database
-
-Firebase Hosting – Free, fast deployment
-
-Planned (Full Solution)
-
-Polygon / Ethereum Blockchain
-
-Solidity Smart Contracts
-
-IPFS for decentralized proof storage
-
-🧠 Trust Score Logic (MVP)
-Action	Trust Score Impact
-Initial score	80
-Milestone completed	+5
-Project delayed	−10
-Verified feedback	+5
-Score bounds	0–100
-
-Note: Blockchain logic is simulated in the MVP for rapid validation.
-
-🗂️ Firestore Data Model
-projects
-
-name (string)
-
-department (string)
-
-trustScore (number)
-
-status (string)
-
-lastUpdated (timestamp)
-
-feedback
-
-userId
-
-userName
-
-userEmail
-
-projectId
-
-projectName
-
-feedback
-
-verified
-
-createdAt
-
-users
-
-displayName
-
-email
-
-photoURL
-
-createdAt
-
-updatedAt
-
-🚧 MVP Limitations (Intentional)
-
-⚠️ Blockchain integration is simulated
-⚠️ No real document storage (metadata only)
-⚠️ Firestore uses test rules for demo
-⚠️ Not connected to real government systems
-
-These are planned upgrades, not missing ideas.
-
-🚀 Deployment
-
-The MVP is deployed using Firebase Hosting.
-
+```bash
 npm install
 npm run dev
 npm run build
 firebase deploy
 
-
-Live URL:
-
-https://<your-project-id>.web.app
-
-🏁 Conclusion
-
-GovTrustChain is not just an idea —
-this MVP proves the feasibility, usability, and scalability of a trust-based governance system.
-
-From assumptions to verification.
-From promises to proof.
-
-📜 License
-
-This project is developed for hackathon and research demonstration purposes.
+🌐 Live Demo:
+https://govtrustchain-mvp.web.app/
