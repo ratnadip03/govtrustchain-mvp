@@ -1,236 +1,228 @@
-# GovTrustChain MVP
+🚀 GovTrustChain
+Trust, Verified — Not Assumed.
 
-A visually engaging, minimal MVP web application for blockchain-inspired government trust scores. Built with React (Vite), Tailwind CSS, and Framer Motion, designed for Firebase Hosting deployment.
+GovTrustChain is a blockchain-inspired governance platform that introduces a Government Trust Score to bring transparency, accountability, and citizen participation into public services.
 
-## Features
+This repository contains the Round-1 MVP, fully deployed and demo-ready, validating the core workflow of the proposed solution.
 
-- 🔐 **Firebase Authentication** - Google Sign-In only
-- 📊 **Real-time Trust Scores** - Animated trust score tracking (0-100)
-- 💬 **Citizen Feedback** - Submit feedback on government projects
-- 🎨 **Smooth Animations** - Framer Motion powered micro-animations
-- 🎯 **Admin Demo Panel** - Hidden route for trust score manipulation
-- 📱 **Responsive Design** - Works on all devices
+🌍 Problem Statement
 
-## Tech Stack
+Public trust in government services is often low due to:
 
-- **React 18** - UI framework
-- **Vite** - Build tool
-- **Tailwind CSS** - Styling
-- **Framer Motion** - Animations
-- **Firebase** - Authentication, Firestore, Hosting
-- **React Router** - Navigation
+Lack of transparency in execution
 
-## Project Structure
+Delays and unclear accountability
 
-```
-govt-trustchain-mvp/
-├── src/
-│   ├── components/          # Reusable components
-│   │   ├── AnimatedNumber.jsx
-│   │   ├── ProjectCard.jsx
-│   │   └── ProtectedRoute.jsx
-│   ├── context/             # React context
-│   │   └── AuthContext.jsx
-│   ├── firebase/            # Firebase configuration
-│   │   ├── config.js
-│   │   └── firestore.js
-│   ├── pages/               # Page components
-│   │   ├── LandingPage.jsx
-│   │   ├── LoginPage.jsx
-│   │   ├── CitizenDashboard.jsx
-│   │   ├── SubmitFeedbackPage.jsx
-│   │   └── AdminDemoPage.jsx
-│   ├── App.jsx              # Main app component
-│   ├── main.jsx             # Entry point
-│   └── index.css            # Global styles
-├── firebase.json            # Firebase hosting config
-├── .firebaserc              # Firebase project config
-├── package.json
-├── vite.config.js
-├── tailwind.config.js
-└── README.md
-```
+Manipulated or unverifiable reports
 
-## Setup Instructions
+No measurable way to assess institutional performance
 
-### 1. Install Dependencies
+Today, citizens are expected to trust systems without the ability to verify them.
 
-```bash
+💡 The GovTrustChain Vision (Full Solution)
+
+GovTrustChain converts public trust into a measurable, verifiable score.
+
+In the complete solution:
+
+Every government project or service is registered on a blockchain ledger
+
+Milestones and actions are enforced using smart contracts
+
+Trust scores update automatically based on:
+
+Timely completion
+
+Budget compliance
+
+Verified citizen feedback
+
+Audit outcomes
+
+Citizens can verify records instead of relying on reports
+
+Personal data remains private; only hashes and proofs are stored
+
+Transparency becomes system-driven, not promise-driven.
+
+🧪 What This MVP Demonstrates (Current Implementation)
+
+This MVP focuses on validating the core workflow and user experience of GovTrustChain.
+
+✅ Implemented in the MVP:
+🌐 Public Transparency Dashboard
+
+Publicly visible list of government projects/services
+
+Displays:
+
+Project name
+
+Responsible department
+
+Live Trust Score (0–100)
+
+Visual progress indicators
+
+Current status (On-time / Delayed)
+
+🔐 Secure Citizen Login
+
+Google Sign-In using Firebase Authentication
+
+No passwords stored
+
+Protected routes for authenticated users
+
+👤 Citizen Dashboard
+
+Personalized dashboard after login
+
+View submitted feedback
+
+Interact with government services
+
+💬 Citizen Feedback System
+
+Submit feedback for any listed project
+
+Optional image metadata upload
+
+Feedback directly influences trust score
+
+📊 Real-Time Trust Score Logic
+
+Trust score updates instantly based on actions
+
+Animated visual feedback for increases or drops
+
+🛠️ Admin Demo Panel (Hidden Route)
+
+Simulated administrative controls:
+
+Mark milestones complete (+5)
+
+Mark project delayed (−10)
+
+Demonstrates automated accountability logic
+
+🎨 Engaging UI & Animations
+
+Smooth micro-animations using Framer Motion
+
+Professional, government-style dashboard design
+
+Fully responsive across devices
+
+⚙️ Tech Stack
+Frontend
+
+React 18 (Vite) – Fast, modern UI framework
+
+Tailwind CSS – Clean, consistent styling
+
+Framer Motion – Smooth UI animations
+
+Backend & Platform
+
+Firebase Authentication – Secure Google Sign-In
+
+Firebase Firestore – Real-time NoSQL database
+
+Firebase Hosting – Free, fast deployment
+
+Planned (Full Solution)
+
+Polygon / Ethereum Blockchain
+
+Solidity Smart Contracts
+
+IPFS for decentralized proof storage
+
+🧠 Trust Score Logic (MVP)
+Action	Trust Score Impact
+Initial score	80
+Milestone completed	+5
+Project delayed	−10
+Verified feedback	+5
+Score bounds	0–100
+
+Note: Blockchain logic is simulated in the MVP for rapid validation.
+
+🗂️ Firestore Data Model
+projects
+
+name (string)
+
+department (string)
+
+trustScore (number)
+
+status (string)
+
+lastUpdated (timestamp)
+
+feedback
+
+userId
+
+userName
+
+userEmail
+
+projectId
+
+projectName
+
+feedback
+
+verified
+
+createdAt
+
+users
+
+displayName
+
+email
+
+photoURL
+
+createdAt
+
+updatedAt
+
+🚧 MVP Limitations (Intentional)
+
+⚠️ Blockchain integration is simulated
+⚠️ No real document storage (metadata only)
+⚠️ Firestore uses test rules for demo
+⚠️ Not connected to real government systems
+
+These are planned upgrades, not missing ideas.
+
+🚀 Deployment
+
+The MVP is deployed using Firebase Hosting.
+
 npm install
-```
-
-### 2. Configure Firebase
-
-1. Create a new Firebase project at [Firebase Console](https://console.firebase.google.com/)
-2. Enable **Authentication** with **Google Sign-In**
-3. Create a **Firestore Database** (start in test mode for MVP)
-4. Copy your Firebase config from Project Settings > General > Your apps
-5. Update `src/firebase/config.js` with your Firebase credentials:
-
-```javascript
-const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-project-id.firebaseapp.com",
-  projectId: "your-project-id",
-  storageBucket: "your-project-id.appspot.com",
-  messagingSenderId: "your-sender-id",
-  appId: "your-app-id"
-};
-```
-
-### 3. Initialize Firestore Data
-
-After setting up Firestore, add sample projects to the `projects` collection:
-
-**Collection: `projects`**
-
-Document 1:
-```json
-{
-  "name": "Smart City Infrastructure",
-  "department": "Urban Development",
-  "trustScore": 80,
-  "status": "On-time",
-  "lastUpdated": [timestamp]
-}
-```
-
-Document 2:
-```json
-{
-  "name": "Digital Healthcare Initiative",
-  "department": "Health & Welfare",
-  "trustScore": 80,
-  "status": "On-time",
-  "lastUpdated": [timestamp]
-}
-```
-
-Document 3:
-```json
-{
-  "name": "Renewable Energy Program",
-  "department": "Energy & Environment",
-  "trustScore": 80,
-  "status": "On-time",
-  "lastUpdated": [timestamp]
-}
-```
-
-### 4. Run Development Server
-
-```bash
 npm run dev
-```
-
-Visit `http://localhost:5173` to see the application.
-
-### 5. Build for Production
-
-```bash
-npm run build
-```
-
-This creates an optimized build in the `dist` folder.
-
-## Deployment to Firebase Hosting
-
-### 1. Install Firebase CLI
-
-```bash
-npm install -g firebase-tools
-```
-
-### 2. Login to Firebase
-
-```bash
-firebase login
-```
-
-### 3. Initialize Firebase Hosting
-
-```bash
-firebase init hosting
-```
-
-When prompted:
-- Select your Firebase project
-- Set public directory to: `dist`
-- Configure as single-page app: **Yes**
-- Set up automatic builds: **No** (for MVP)
-
-### 4. Update .firebaserc
-
-Edit `.firebaserc` and replace `your-project-id` with your actual Firebase project ID.
-
-### 5. Deploy
-
-```bash
 npm run build
 firebase deploy
-```
 
-Your app will be live at: `https://your-project-id.web.app`
 
-## Trust Score Logic
+Live URL:
 
-- **Initial Score:** 80
-- **Milestone Complete:** +5 points
-- **Project Delayed:** -10 points
-- **Verified Feedback:** +5 points
-- **Score Range:** 0-100 (automatically clamped)
+https://<your-project-id>.web.app
 
-## Routes
+🏁 Conclusion
 
-- `/` - Landing page (public)
-- `/login` - Login page (public)
-- `/dashboard` - Citizen dashboard (protected)
-- `/submit-feedback` - Submit feedback form (protected)
-- `/admin-demo` - Admin control panel (protected, hidden route)
+GovTrustChain is not just an idea —
+this MVP proves the feasibility, usability, and scalability of a trust-based governance system.
 
-## Important Notes
+From assumptions to verification.
+From promises to proof.
 
-⚠️ **Demo Mode**: This is an MVP for hackathon demonstration. Real blockchain integration would be implemented in production.
+📜 License
 
-⚠️ **No Document Storage**: Image uploads store metadata only. Actual file storage is not implemented in MVP.
-
-⚠️ **Firestore Security**: For production, implement proper Firestore security rules. The MVP uses test mode.
-
-## Firestore Collections
-
-### `projects`
-- `name` (string)
-- `department` (string)
-- `trustScore` (number, 0-100)
-- `status` (string: "On-time" | "Delayed")
-- `lastUpdated` (timestamp)
-
-### `feedback`
-- `userId` (string)
-- `userEmail` (string)
-- `userName` (string)
-- `projectId` (string)
-- `projectName` (string)
-- `feedback` (string)
-- `hasImage` (boolean)
-- `imageFileName` (string | null)
-- `verified` (boolean)
-- `createdAt` (timestamp)
-
-### `users`
-- `displayName` (string)
-- `email` (string)
-- `photoURL` (string | null)
-- `createdAt` (timestamp)
-- `updatedAt` (timestamp)
-
-## Development
-
-- **Start dev server:** `npm run dev`
-- **Build:** `npm run build`
-- **Preview build:** `npm run preview`
-- **Lint:** `npm run lint`
-
-## License
-
-This project is created for hackathon demonstration purposes.
+This project is developed for hackathon and research demonstration purposes.
